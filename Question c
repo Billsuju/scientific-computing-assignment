@@ -1,0 +1,12 @@
+import numpy as np
+
+# Define the region
+x = np.linspace(0, 1, 100)
+y = np.linspace(0, 1, 100)
+X, Y = np.meshgrid(x, y)
+Z = X**2 + Y**2
+
+# Approximating the volume using numerical integration (trapezoidal rule)
+dx = dy = 1 / 100
+volume = np.sum(Z) * dx * dy
+print("Estimated volume under z = x² + y² over [0,1] x [0,1]:", volume)
